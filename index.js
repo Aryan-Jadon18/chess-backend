@@ -24,7 +24,12 @@ app.get("/players", (req, res) => {
 });
 
 app.get("/players/:id", (req, res) => {
-    console.log(req);
+    
+    if(!players[id]){
+        return "message: player not found";
+    }else{
+        res.json(players[id]);
+    }
 });
 
 app.listen(3000, () => {
