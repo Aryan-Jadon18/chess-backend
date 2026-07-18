@@ -20,7 +20,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/players", (req, res) => {
-    res.send(players);
+    res.json(players);//instead of send, use .json
+});
+
+app.get("/players/:id", (req, res) => {
+    console.log(req);
 });
 
 app.listen(3000, () => {
